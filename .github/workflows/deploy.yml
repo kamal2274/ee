@@ -1,3 +1,9 @@
+name: Simple CI
+
+on:
+  push:
+    branches: [ main ]  # هيشتغل كل مرة في push على فرع main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,6 +22,7 @@ jobs:
           docker ps
           sleep 10
           docker logs shortener_app
+
 
           #- name: Create deployment package
           #run: zip -r deploy.zip . -x '*.git*'
